@@ -1,8 +1,11 @@
-package one.digitalinnovation.parking.model;
+package one.digitalinnovation.parking.controller.dto;
 
 import java.time.LocalDateTime;
 
-public class Parking {
+import com.fasterxml.jackson.annotation.JsonInclude;
+
+@JsonInclude(JsonInclude.Include.NON_NULL)
+public class ParkingDTO {
 
     private String id;
     private String license;
@@ -11,20 +14,8 @@ public class Parking {
     private String color;
     private LocalDateTime entryDate;
     private LocalDateTime exitDate;
-    private Double bill;  
+    private Double bill;
     
-    public Parking() {
-	
-    }
-    
-    public Parking(String id, String license, String state, String model, String color) {
-	super();
-	this.id = id;
-	this.license = license;
-	this.state = state;
-	this.model = model;
-	this.color = color;
-    }
     public String getId() {
         return id;
     }
@@ -72,6 +63,6 @@ public class Parking {
     }
     public void setBill(Double bill) {
         this.bill = bill;
-    }   
+    }    
     
 }

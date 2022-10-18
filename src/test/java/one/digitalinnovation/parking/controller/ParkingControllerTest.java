@@ -13,14 +13,14 @@ import org.springframework.http.MediaType;
 
 
 @SpringBootTest(webEnvironment = SpringBootTest.WebEnvironment.RANDOM_PORT)
-class ParkingControllerIT {
+class ParkingControllerTest extends AbstractContainerBase {
 
     @LocalServerPort
     private int randomPort;
     
     @BeforeEach
     public void setUpTest() {
-    	RestAssured.port = randomPort;
+        RestAssured.port = randomPort;
     }
     
     @Test
